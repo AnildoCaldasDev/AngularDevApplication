@@ -1,10 +1,48 @@
 <section>
-  <article>
+  <!-- <article>
     <p>Url do google: {{url}}</p>
     <ul>
       <li *ngFor="let curso of cursos">{{curso}}</li>
     </ul>
     <p>Usando Imagens com Property Binding</p>
     <img width="600" height="300" [src]="urlLogoAngular" alt="logo angular"  />
+  </article> -->
+  <article>
+    <h4>Class eStyle Binding</h4>
+
+   <div class="container-fluid">
+      <div class="row alert">
+        <select #classe (change)="0">
+          <option selected value="">Selected</option>
+          <option value="alert-danger">Danger</option>
+          <option value="alert-success">Success</option>
+          <option value="alert-warning">Warning</option>
+          <option value="alert-info">Info</option>
+        </select>
+      </div>
+      <hr>
+      <br>
+      <div class="alert {{classe.value}}" role="alert">
+        Texto colorido conforme cor do dropdown
+      </div>
+
+      <br>
+      <div [class.alert-success]="classe.value == 'alert-success'" class="alert" role="alert">
+        Success
+      </div>
+      <div [class.alert-info]="classe.value == 'alert-info'" class="alert" role="alert">
+        Info
+      </div>
+      <div [class.alert-warning]="classe.value == 'alert-warning'" class="alert" role="alert">
+        Warning
+      </div>
+
+      <div [style.display]="classe.value == 'alert-danger' ? 'block':'none'">
+        <p class="alert alert-danger" role="alert">Erro message</p>
+      </div>
+
+
+
+    </div>
   </article>
 </section>
