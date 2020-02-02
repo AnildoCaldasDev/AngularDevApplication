@@ -79,8 +79,8 @@ export const routes: Routes = [
         loadChildren: () => import('./views/theme/theme.module').then(m => m.ThemeModule)
       },
       {
-        path: 'widgets',
-        loadChildren: () => import('./views/widgets/widgets.module').then(m => m.WidgetsModule)
+        path: 'implementacoes',
+        loadChildren: () => import('./views/implementacoes/impressaoqrcode.module').then(m => m.ImpressaoqrcodeModule)
       }
     ]
   },

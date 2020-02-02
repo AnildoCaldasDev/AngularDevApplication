@@ -11,18 +11,14 @@ export const navItems: INavData[] = [
     }
   },
   {
-    title: true,
-    name: 'Components'
-  },
-  {
-    name: 'Base',
-    url: '/base',
-    icon: 'icon-puzzle',
+    name: 'Implementações',
+    url: '/implementacoes',
+    icon: 'icon-options-vertical',
     children: [
       {
-        name: 'Cards',
-        url: '/base/cards',
-        icon: 'icon-puzzle'
+        name: 'Impressão',
+        url: '/implementacoes/impressaoqrcode',
+        icon: 'icon-drawer'
       }
     ]
   }
