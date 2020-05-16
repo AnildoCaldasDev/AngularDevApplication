@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../models/product';
-import { Line } from '../../models/line';
-import { Station } from '../../models/station';
-import { ImpressaoqrcodeService } from '../../services/impressaoqrcode.service';
+import { Product } from '../../../models/product';
+import { Line } from '../../../models/line';
+import { Station } from '../../../models/station';
+import { ImpressaoqrcodeService } from '../../../services/impressaoqrcode.service';
 
 @Component({
   selector: 'app-impressaoqrcode',
@@ -15,7 +15,7 @@ export class ImpressaoqrcodeComponent implements OnInit {
   lineList: Line[] = []
   stationList: Station[] = []
 
-  constructor(private impressaoService : ImpressaoqrcodeService) { 
+  constructor(private impressaoService: ImpressaoqrcodeService) {
   }
 
   ngOnInit(): void {
@@ -24,7 +24,7 @@ export class ImpressaoqrcodeComponent implements OnInit {
     this.stationList = this.impressaoService.getStationList();
   }
 
-  changeDropProduct(id : number){
+  changeDropProduct(id: number) {
     alert(id);
   }
 

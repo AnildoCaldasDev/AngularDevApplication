@@ -16,9 +16,14 @@ export const navItems: INavData[] = [
     icon: 'icon-options-vertical',
     children: [
       {
-        name: 'Impressão',
+        name: 'Impressão QRCode',
         url: '/implementacoes/impressaoqrcode',
         icon: 'icon-drawer'
+      },
+      {
+        name: 'DatePicker',
+        url: '/implementacoes/usingdatepicker',
+        icon: 'icon-calendar'
       }
     ]
   }

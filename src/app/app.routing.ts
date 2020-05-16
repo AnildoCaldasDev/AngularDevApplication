@@ -80,7 +80,11 @@ export const routes: Routes = [
       },
       {
         path: 'implementacoes',
-        loadChildren: () => import('./views/implementacoes/impressaoqrcode.module').then(m => m.ImpressaoqrcodeModule)
+        loadChildren: () => import('./views/implementacoes/impressaoqrcode/impressaoqrcode.module').then(m => m.ImpressaoqrcodeModule)
+      },
+      {
+        path: 'implementacoes',
+        loadChildren: () => import('./views/implementacoes/datepickers/datepicker.module').then(m => m.DatepickerModule)
       }
     ]
   },
@@ -88,7 +92,7 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
