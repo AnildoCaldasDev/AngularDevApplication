@@ -1,0 +1,6 @@
+************************************** Anotações e Dicas Angular **************************************
+
+1 - Erro: Can't bind to 'formGroup' since it isn't a known property of 'form'. 
+	Solução: Incluir no modulo da app a referencia do reactive forms module.
+			 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
