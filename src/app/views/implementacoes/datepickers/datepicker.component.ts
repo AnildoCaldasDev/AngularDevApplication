@@ -3,6 +3,7 @@ import { INgxMyDpOptions as IInitNgxMyDpOptions } from 'ngx-mydatepicker';
 import { INgxMyDpOptions as IFinaltNgxMyDpOptions } from 'ngx-mydatepicker';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 //font: froms reactive: https://jasonwatmore.com/post/2019/06/14/angular-8-reactive-forms-validation-example
+//font do date Picker: https://github.com/kekeh/ngx-mydatepicker
 @Component({
   selector: 'app-datepicker',
   templateUrl: './datepicker.component.html',
