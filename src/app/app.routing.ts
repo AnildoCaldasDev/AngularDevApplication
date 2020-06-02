@@ -85,6 +85,11 @@ export const routes: Routes = [
       {
         path: 'implementacoes',
         loadChildren: () => import('./views/implementacoes/datepickers/datepicker.module').then(m => m.DatepickerModule)
+      },
+      {
+        path: 'implementacoes',
+        //LEMBRAR QUE ESTE PATH É DO CAMINHO DO ARQUIVO:
+        loadChildren: () => import('./views/implementacoes/reactiveforms/reactiveforms.module').then(m => m.ReactiveFormsExampleModule)
       }
     ]
   },

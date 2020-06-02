@@ -24,6 +24,11 @@ export const navItems: INavData[] = [
         name: 'DatePicker',
         url: '/implementacoes/usingdatepicker',
         icon: 'icon-calendar'
+      },
+      {
+        name: 'Reactive Forms',
+        url: '/implementacoes/reactiveforms',
+        icon: 'icon-notebook'
       }
     ]
   }
