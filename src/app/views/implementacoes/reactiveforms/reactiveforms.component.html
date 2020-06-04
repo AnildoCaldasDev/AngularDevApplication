@@ -36,6 +36,33 @@
         </p>
         <br>
         <h2>Dynamic Forms</h2>
-
+        <form [formGroup]="profileDynamicForm" (ngSubmit)="onSubmit()">
+            <label>
+                First Name: <input type="text" formControlName="firstName">
+            </label><br>
+            <label>
+                Last Name: <input type="text" formControlName="lastName">
+            </label><br>
+            <div formGroupName="address">
+                <h5>Address</h5>
+                <label>
+                    Street: <input type="text" formControlName="street">
+                </label><br>
+                <label>
+                    Number: <input type="text" formControlName="number">
+                </label><br>
+            </div>
+            <div formArrayName="aliases">
+                <h5>Aliases</h5> <button class="pull-right" (click)="addAlias()">Add Alias</button>
+                <div *ngFor="let alias of aliases.controls; let i=index">
+                    <label>
+                        Alias:
+                        <input type="text" [formControlName]="i">
+                    </label>
+                </div>
+            </div>
+            <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+            <button type="button" class="pull-right" (click)="updateDynamicProfile()">Atualizar</button>
+        </form>
     </div>
 </div>

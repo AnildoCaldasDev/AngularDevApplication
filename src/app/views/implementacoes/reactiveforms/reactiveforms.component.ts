@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import { FormControl } from '@angular/forms';
-import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
 
 
 @Component({
@@ -28,6 +28,7 @@ export class ReactiveformsComponent implements OnInit {
   //   })
   // });
 
+  // static fosm examples
   profileForm = this.formBuilder.group({
     firstName: ['', Validators.required],
     lastName: [''],
@@ -37,8 +38,6 @@ export class ReactiveformsComponent implements OnInit {
     }),
   });
 
-
-
   updateProfile() {
     this.profileForm.patchValue({
       firstName: 'Anildo Caldas',
@@ -47,7 +46,41 @@ export class ReactiveformsComponent implements OnInit {
         street: 'Rua do retiro, 40'
       }
     });
+  }
+  // static fosm examples
 
+
+  profileDynamicForm = this.formBuilder.group({
+    firstName: ['', Validators.required],
+    lastName: [''],
+    address: this.formBuilder.group({
+      street: [''],
+      number: [''],
+    }),
+    aliases: this.formBuilder.array([
+      this.formBuilder.control('')
+    ])
+  });
+
+
+  get aliases() {
+    return this.profileDynamicForm.get('aliases') as FormArray;
+  }
+
+  addAlias() {
+    this.aliases.push(this.formBuilder.control(''));
+  }
+
+  updateDynamicProfile() {
+    this.profileDynamicForm.patchValue({
+      firstName: 'Anildo Caldas',
+      teste: 'dgdgdgd',
+      address: {
+        street: 'Rua do retiro, 40'
+      }
+    });
+
+    console.log(this.profileDynamicForm.value);
   }
 
 
