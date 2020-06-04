@@ -9,5 +9,33 @@
         <button (click)="updateName()">Atualizar</button>
         <br>
         <label>Name Type is: {{name.value}}</label> -->
+        <h2>Static Forms</h2>
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+            <label>
+                First Name: <input type="text" formControlName="firstName">
+            </label><br>
+            <label>
+                Last Name: <input type="text" formControlName="lastName">
+            </label><br>
+            <div formGroupName="address">
+                <h5>Address</h5>
+                <label>
+                    Street: <input type="text" formControlName="street">
+                </label><br>
+                <label>
+                    Number: <input type="text" formControlName="number">
+                </label><br>
+            </div>
+            <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+            <button class="pull-right" (click)="updateProfile()">Atualizar</button>
+        </form>
+        <br>
+        <p role="alert"
+            [className]="profileForm.status == 'INVALID' ? 'text-center alert alert-danger': 'text-center alert alert-success' ">
+            {{profileForm.status == 'INVALID' ? 'Existem campos pendentes!' : 'Todos campos preenchidos com Sucesso!'}}
+        </p>
+        <br>
+        <h2>Dynamic Forms</h2>
+
     </div>
 </div>
