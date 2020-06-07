@@ -6,6 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ReactiveformsroutingModule } from './reactiveforms-routin.module';
 import { ReactiveformsComponent } from './reactiveforms.component';
+import { DynamicFormQuestionComponent } from './dynamicquestions/dynamic-form-questions.component';
+import { DynamicFormComponent } from './dynamicform/dynamic-form.component';
 
 @NgModule({
     imports: [
@@ -15,7 +17,9 @@ import { ReactiveformsComponent } from './reactiveforms.component';
         ReactiveFormsModule
     ],
     declarations: [
-        ReactiveformsComponent
+        ReactiveformsComponent,
+        DynamicFormQuestionComponent,
+        DynamicFormComponent
     ]
 })
 export class ReactiveFormsExampleModule { }

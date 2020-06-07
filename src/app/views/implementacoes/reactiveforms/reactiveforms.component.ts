@@ -1,17 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 // import { FormControl } from '@angular/forms';
 import { FormGroup, FormControl, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { QuestionBase } from './model/question-base';
+import { Observable } from 'rxjs';
+import { QuestionControlService } from '../../../services/question-control.service';
 
 
 @Component({
   selector: 'app-reactiveforms',
   templateUrl: './reactiveforms.component.html',
-  styleUrls: ['./reactiveforms.component.css']
+  styleUrls: ['./reactiveforms.component.css'],
+  providers: [QuestionControlService]
 })
 export class ReactiveformsComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+    private questionsService: QuestionControlService) {
+    this.questions$ = questionsService.getQuestions();
+  }
 
+  questions$: Observable<QuestionBase<any>[]>;
+  processing: Boolean = false;
+
+  addQuestion() {
+    this.processing = true;
+    this.questionsService.addQuestion();
+    this.questions$ = this.questionsService.getQuestions();
+    this.processing = false;
+  }
 
   //examples with formControl:
   // name = new FormControl('');

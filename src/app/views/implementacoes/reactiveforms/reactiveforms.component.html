@@ -66,3 +66,14 @@
         </form>
     </div>
 </div>
+
+<div class="card">
+    <div class="card-header text-white bg-primary">
+        Dynamic Form Questions
+        <span (click)="addQuestion()" class="col-lg-1 col-md-1 form-control fa-pull-right"><i
+                class="icon-plus icons"></i></span>
+    </div>
+    <div class="card-body" *ngIf="!processing">
+        <app-dynamic-form [questions]="questions$ | async"></app-dynamic-form>
+    </div>
+</div>

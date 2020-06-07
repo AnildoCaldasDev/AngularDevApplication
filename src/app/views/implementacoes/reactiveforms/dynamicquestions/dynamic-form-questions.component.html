@@ -1,0 +1,19 @@
+<div [formGroup]="form" class="form-group">
+
+    <label class="col-lg-8 col-md-8 col-sm-12 col-xs-12 pull-left" [attr.for]="question.key">{{question.label}}</label>
+
+    <div class="fieldRequiredStyle col-lg-2 col-md-2 col-sm-12 col-xs-12 pull-left">
+        <label *ngIf="!isValid">Campo Obrigatorio!</label>
+        <label *ngIf="isValid"> </label>
+    </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 pull-left" [ngSwitch]="question.controlType">
+        <input class="form-control" *ngSwitchCase="'textbox'" [formControlName]="question.key" [id]="question.key"
+            [type]="question.type">
+
+        <select class="form-control" [id]="question.key" *ngSwitchCase="'dropdown'" [formControlName]="question.key">
+            <option *ngFor="let opt of question.options" [value]="opt.key">{{opt.value}}</option>
+        </select>
+
+    </div>
+</div>
