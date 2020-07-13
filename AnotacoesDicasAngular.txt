@@ -3,4 +3,8 @@
 1 - Erro: Can't bind to 'formGroup' since it isn't a known property of 'form'. 
 	Solução: Incluir no modulo da app a referencia do reactive forms module.
 			 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+			 incluir também no @NgModule({});
 
+2- Erro: Can't bind to 'formControl' since it isn't a known property of 'input'
+	Solução: Incluir no modulo filho, (no principal ja contem), dentro do @NgModule a referencia para:
+	ReactiveFormsModule
