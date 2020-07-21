@@ -29,6 +29,11 @@ export const navItems: INavData[] = [
         name: 'Reactive Forms',
         url: '/implementacoes/reactiveforms',
         icon: 'icon-notebook'
+      },
+      {
+        name: 'Redux Products',
+        url: '/implementacoes/products',
+        icon: 'icon-notebook'
       }
     ]
   }

@@ -1,0 +1,60 @@
+<div class="card text-center">
+    <div class="card-header">
+        Finalize Seu Carrinho de Compras
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-9 col-lg-9 col-sm-12 col-xs-12">
+                <div *ngIf="(cart$ | async).products.length > 0">
+                    <div class="row text-center">
+                        <div class="card col-sm-12 col-xs-12 col-md-3 col-lg-3 ml-4"
+                            *ngFor="let product of (cart$ | async).products">
+                            <div class="text-center mt-2">
+                                <img src="{{product.image}}" width="150" height="150" class="rounded"
+                                    alt="product.title">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{product.title}}</h5>
+                                <p class="card-text">{{product.price | currency: 'BRL' }}</p>
+                                <!-- <a href="#" class="btn btn-primary">Adicionar</a> -->
+                                <button class="btn btn-danger" (click)="confirmRemove(product)">Remover</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12 text-center">
+                <div class="pull-right" *ngIf="(cart$ | async).products.length == 0">
+                    <span><strong>Seu carrinho está vazio!</strong></span>
+                </div>
+                <div class="pull-right" *ngIf="(cart$ | async).products.length > 0">
+                    <a class="text-danger font-weight-bolder" (click)="reset()"><i
+                            class="icon-trash icons h4"></i>Limpar
+                        Carrinho</a>
+                    <br>
+                    <br>
+                    <ul class="list-group" *ngFor="let product of (cart$ | async).products">
+                        <li class="list-group-item d-flex justify-content-between align-items-left">
+                            <div class="col-md-3 col-lg-3">
+                                <img src="{{product.image}}" width="50" height="50" class="rounded" alt="product.title">
+                            </div>
+                            <div class="col-md-9 col-lg-9">
+                                <span>{{product.title}}</span>
+                                <br>
+                                <a class="btn btn-danger btn-sm" (click)="confirmRemove(product)"><i
+                                        class="icon-trash icons h4"></i></a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="(cart$ | async).products.length > 0" style="background-color: black;" class="card-footer text-muted">
+        <div class="pull-right">
+            <span class="mr-3"><strong>{{(cart$ | async).total | currency: 'BRL' }}</strong></span>
+            <button class="btn btn-success">Finalizar Compra</button>
+        </div>
+    </div>
+</div>

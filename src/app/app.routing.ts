@@ -90,6 +90,16 @@ export const routes: Routes = [
         path: 'implementacoes',
         //LEMBRAR QUE ESTE PATH É DO CAMINHO DO ARQUIVO:
         loadChildren: () => import('./views/implementacoes/reactiveforms/reactiveforms.module').then(m => m.ReactiveFormsExampleModule)
+      },
+      {
+        path: 'implementacoes',
+        //LEMBRAR QUE ESTE PATH É DO CAMINHO DO ARQUIVO:
+        loadChildren: () => import('./views/implementacoes/productlist/productlist.module').then(m => m.ProductListModule)
+      },
+      {
+        path: 'implementacoes',
+        //LEMBRAR QUE ESTE PATH É DO CAMINHO DO ARQUIVO:
+        loadChildren: () => import('./views/implementacoes/shoppingcart/shoppingcart.module').then(m => m.ShoppingCartModule)
       }
     ]
   },
