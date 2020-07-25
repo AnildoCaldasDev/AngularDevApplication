@@ -11,10 +11,13 @@ export class UploadFilesService {
     const formData = new FormData();
     files.forEach((file) => formData.append("file", file, file.name));
     //versão com request puro
-    const request = new HttpRequest("POST", url, formData);
-    return this.http.request(request);
+    // const request = new HttpRequest("POST", url, formData);
+    // return this.http.request(request);
 
     //versaõ com http post tradicional:
-    //return this.http.post(url, formData);
+    return this.http.post(url, formData, {
+      observe: "events",
+      reportProgress: true,
+    });
   }
 }
