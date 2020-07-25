@@ -100,6 +100,11 @@ export const routes: Routes = [
         path: 'implementacoes',
         //LEMBRAR QUE ESTE PATH É DO CAMINHO DO ARQUIVO:
         loadChildren: () => import('./views/implementacoes/shoppingcart/shoppingcart.module').then(m => m.ShoppingCartModule)
+      },
+      {
+        path: 'implementacoes',
+        //LEMBRAR QUE ESTE PATH É DO CAMINHO DO ARQUIVO:
+        loadChildren: () => import('./views/implementacoes/uploadfiles/uploadfiles.module').then(m => m.UploadFilesModule)
       }
     ]
   },

@@ -34,6 +34,11 @@ export const navItems: INavData[] = [
         name: 'Redux Products',
         url: '/implementacoes/products',
         icon: 'icon-notebook'
+      },
+      {
+        name: 'Upload Files',
+        url: '/implementacoes/uploadfiles',
+        icon: 'icon-cloud-upload'
       }
     ]
   }

@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-header text-white bg-primary">
+    Uploading Files With Angular And Asp.Net Core API
+  </div>
+  <div class="card-body">
+    <div>
+      <label>Area de Seleção do Arquivo:</label>
+    </div>
+    <br>
+    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 pull-left">
+      <div class="custom-file">
+        <input type="file" multiple (change)="onChange($event)" class="custom-file-input" id="customFile">
+        <label id="customFileLabel" class="custom-file-label" for="customFile">Escolha o Arquivo</label>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pull-left">
+      <button class="btn btn-primary" [disabled]="!files" (click)="onUpload()">Upload File(s)</button>
+    </div>
+    <br>
+  </div>
+</div>
