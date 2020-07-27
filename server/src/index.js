@@ -25,16 +25,22 @@ const multipartMiddleware = multipart({
 
 app.post('/upload', multipartMiddleware, (req, res) => {
   const files = req.files;
-  console.log(files);
   res.json({
     message: files
   });
 });
 
+app.get('/downloadExcel', (req, res) => {
+  res.download('./uploads/report.xlsx');
+});
+
+app.get('/downloadPdf', (req, res) => {
+  res.download('./uploads/report.pdf');
+});
+
 app.use((err, req, res, next) => res.json({
   error: err.message
 }));
-
 
 app.listen(8000, () => {
   console.log('Server port 8000 started...');
