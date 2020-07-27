@@ -23,7 +23,13 @@
       </form>
     </div>
     <!--/.row-->
-
+    <br>
+    <app-download-file [url]="'downloadPdf'" [buttonName]="'Download Pdf'" [fileName]="'report.pdf'">
+    </app-download-file>
+    <br>
+    <br>
+    <app-download-file [url]="'downloadExcel'" [buttonName]="'Download Alternativo'" [fileName]="'report.xlsx'">
+    </app-download-file>
   </div>
   <!-- <div class="card-footer">
       <div class="row text-center">

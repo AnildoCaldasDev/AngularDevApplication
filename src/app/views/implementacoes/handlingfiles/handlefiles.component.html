@@ -27,23 +27,15 @@
     <br>
     <br>
     <br>
-
     <div>
       <h5>Download File Area:</h5>
     </div>
     <br>
-
     <div class="row">
-
-      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pull-left">
-        <button class="btn btn-primary" (click)="onDownloadExcel()">Download Excel</button>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pull-right">
-        <button class="btn btn-primary" (click)="onDownloadPdf()">Download PDF</button>
-      </div>
+      <app-download-file [url]="'downloadExcel'" [buttonName]="'Download Excel'" [fileName]="'report.xlsx'">AAA
+      </app-download-file>
+      <app-download-file [url]="'downloadPdf'" [buttonName]="'Download Pdf'" [fileName]="'report.pdf'">
+      </app-download-file>
     </div>
-
-
-
   </div>
 </div>

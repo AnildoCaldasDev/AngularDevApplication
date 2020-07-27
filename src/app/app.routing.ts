@@ -132,8 +132,8 @@ export const routes: Routes = [
         //LEMBRAR QUE ESTE PATH É DO CAMINHO DO ARQUIVO:
         loadChildren: () =>
           import(
-            "./views/implementacoes/handlingfiles/uploadfiles.module"
-          ).then((m) => m.UploadFilesModule),
+            "./views/implementacoes/handlingfiles/handlefiles.module"
+          ).then((m) => m.HandleFilesModule),
       },
     ],
   },

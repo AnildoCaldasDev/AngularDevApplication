@@ -8,3 +8,27 @@
 2- Erro: Can't bind to 'formControl' since it isn't a known property of 'input'
 	Solução: Incluir no modulo filho, (no principal ja contem), dentro do @NgModule a referencia para:
 	ReactiveFormsModule
+	
+3 - Compartilhar 1 component entre 2 ou mias modulos:
+1º - Crio o component;
+2º - defino o selector dele. ex:  selector: "app-download-file",
+3º - Crio um módulo Shared e declaro e exporto o component em questão. ex:
+	@NgModule({
+		declarations: [DownloadFileComponent],
+		imports: [],
+		exports: [DownloadFileComponent],
+	})
+	export class SharedModule {}
+4º - Nos módulos que irão consumir este component eu faço o import do módulo SharedModule.
+5º - No Html do component que irá usar o component a ser compartilhado, eu faço a inclusão do selector do component
+	 passando os atributos, caso tenha. ex: 
+	 <app-download-file [url]="'downloadExcel'" [buttonName]="'Download Excel'" [fileName]="'report.xlsx'">AAA
+     </app-download-file>
+6º os atribulos url, buttonName, fileName, por exemplo, serão @Input() nomeAtributo; tipodo atributo dentro do componente a ser compartilhado.
+
+
+	
+	
+https://github.com/coreui/coreui-free-angular-admin-template#prerequisites
+
+https://medium.com/@teclogiqs/angular-8-insights-of-the-latest-version-of-angular-11b1f0b19029

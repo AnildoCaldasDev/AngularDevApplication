@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { UploadfilesComponent } from "./uploadfiles.component";
+import { HandleFilesComponent } from "./handlefiles.component";
 
 const routes: Routes = [
   {
@@ -15,7 +15,7 @@ const routes: Routes = [
       },
       {
         path: "uploadfiles",
-        component: UploadfilesComponent,
+        component: HandleFilesComponent,
         data: {
           title: "Tela de Upload de Files",
         },
@@ -28,4 +28,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class UploadFilesRoutingModule {}
+export class HandleFilesRoutingModule {}

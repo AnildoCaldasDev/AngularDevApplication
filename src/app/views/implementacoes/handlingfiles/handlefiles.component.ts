@@ -4,14 +4,12 @@ import { HandlingFilesService } from "../../../services/handling-files.service";
 import { Subscription } from "rxjs";
 import { environment } from "../../../../environments/environment";
 import { filterResponse, uploadProgress } from "../../../shared/rxjs-operators";
-import { windowWhen } from "rxjs/operators";
-import { setTime } from "ngx-bootstrap/chronos/utils/date-setters";
 
 @Component({
-  selector: "app-uploadfiles",
-  templateUrl: "./uploadfiles.component.html",
+  selector: "app-handlefiles",
+  templateUrl: "./handlefiles.component.html",
 })
-export class UploadfilesComponent implements OnInit, OnDestroy {
+export class HandleFilesComponent implements OnInit, OnDestroy {
   files: Set<File>;
   uploadSubscription: Subscription;
   progress = 0;
@@ -61,19 +59,19 @@ export class UploadfilesComponent implements OnInit, OnDestroy {
     }
   }
 
-  onDownloadExcel() {
-    this.handlingFilesService
-      .download(environment.BASE_URL + "/downloadExcel")
-      .subscribe((res: any) => {
-        this.handlingFilesService.handleFiles(res, "report.xlsx");
-      });
-  }
+  // onDownloadExcel() {
+  //   this.handlingFilesService
+  //     .download(environment.BASE_URL + "/downloadExcel")
+  //     .subscribe((res: any) => {
+  //       this.handlingFilesService.handleFiles(res, "report.xlsx");
+  //     });
+  // }
 
-  onDownloadPdf() {
-    this.handlingFilesService
-      .download(environment.BASE_URL + "/downloadPdf")
-      .subscribe((res: any) => {
-        this.handlingFilesService.handleFiles(res, "report.pdf");
-      });
-  }
+  // onDownloadPdf() {
+  //   this.handlingFilesService
+  //     .download(environment.BASE_URL + "/downloadPdf")
+  //     .subscribe((res: any) => {
+  //       this.handlingFilesService.handleFiles(res, "report.pdf");
+  //     });
+  // }
 }
