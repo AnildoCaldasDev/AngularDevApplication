@@ -8,21 +8,9 @@
     </div>
     <br>
     <div class="row">
-      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 pull-left">
-        <div class="custom-file">
-          <input type="file" multiple (change)="onChange($event)" class="custom-file-input" id="customFile">
-          <label id="customFileLabel" class="custom-file-label" for="customFile">Escolha o Arquivo</label>
-        </div>
-        <label class="mt-4">Progresso do Upload:</label>
-        <div class="progress" style="height: 25px;">
-          <div class="progress-bar" role="progressbar" [style.width]="progress + '%'">
-            <span class="mt-1 mb-1">{{progress}}%</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pull-left">
-        <button class="btn btn-primary" [disabled]="!files" (click)="onUpload()">Upload File(s)</button>
-      </div>
+      <app-upload-file [resetAfterUpload]="true" [url]="'/upload'"
+        class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pull-left" [buttonUploadName]="'Subir Arquivo(s)'">
+      </app-upload-file>
     </div>
     <br>
     <br>
