@@ -26,7 +26,8 @@
 		 </app-download-file>
 	6º os atribulos url, buttonName, fileName, por exemplo, serão @Input() nomeAtributo; tipodo atributo dentro do componente a ser compartilhado.
 
-
+4- usar proxy no package.json
+"start": "ng serve --proxy-config proxy.conf.js",
 	
 	
 https://github.com/coreui/coreui-free-angular-admin-template#prerequisites
