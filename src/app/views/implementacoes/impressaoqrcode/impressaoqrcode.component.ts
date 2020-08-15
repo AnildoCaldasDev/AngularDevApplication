@@ -129,7 +129,7 @@ export class ImpressaoqrcodeComponent implements OnInit {
         }
       })
       .catch(() => {
-        console.log("Catch chamado");
+        console.log("Catch chamado!");
         setTimeout(this.startConnection, 5000);
       });
   }
