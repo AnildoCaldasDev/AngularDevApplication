@@ -93,8 +93,8 @@ export const routes: Routes = [
         path: "implementacoes",
         loadChildren: () =>
           import(
-            "./views/implementacoes/impressaoqrcode/impressaoqrcode.module"
-          ).then((m) => m.ImpressaoqrcodeModule),
+            "./views/implementacoes/dashboardrealtime/dashboardrealtime.module"
+          ).then((m) => m.DashboardRealtimeModule),
       },
       {
         path: "implementacoes",

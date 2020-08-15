@@ -2,19 +2,19 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 
-import { ImpressaoqrcodeComponent } from "./impressaoqrcode.component";
-import { ImpressaoqrcoderoutingModule } from "./impressaoqrcode-routing.module";
+import { DashboardRealtimeComponent } from "./dashboardrealtime.component";
 
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { SharedModule } from "../../../shared/shared.module";
+import { DashboardrealtimeroutingModule } from "./dashboardrealtime-routing.module";
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
-    ImpressaoqrcoderoutingModule,
+    DashboardrealtimeroutingModule,
     BsDropdownModule.forRoot(),
   ],
-  declarations: [ImpressaoqrcodeComponent],
+  declarations: [DashboardRealtimeComponent],
 })
-export class ImpressaoqrcodeModule {}
+export class DashboardRealtimeModule {}

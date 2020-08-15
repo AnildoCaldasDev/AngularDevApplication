@@ -1,45 +1,45 @@
-import { INavData } from '@coreui/angular';
+import { INavData } from "@coreui/angular";
 
 export const navItems: INavData[] = [
   {
-    name: 'Dashboard',
-    url: '/dashboard',
-    icon: 'icon-speedometer',
+    name: "Dashboard",
+    url: "/dashboard",
+    icon: "icon-speedometer",
     badge: {
-      variant: 'info',
-      text: 'NEW'
-    }
+      variant: "info",
+      text: "NEW",
+    },
   },
   {
-    name: 'Implementações',
-    url: '/implementacoes',
-    icon: 'icon-options-vertical',
+    name: "Implementações",
+    url: "/implementacoes",
+    icon: "icon-options-vertical",
     children: [
       {
-        name: 'Impressão QRCode',
-        url: '/implementacoes/impressaoqrcode',
-        icon: 'icon-drawer'
+        name: "Dashboard Realtime",
+        url: "/implementacoes/dashboardrealtime",
+        icon: "icon-drawer",
       },
       {
-        name: 'DatePicker',
-        url: '/implementacoes/usingdatepicker',
-        icon: 'icon-calendar'
+        name: "DatePicker",
+        url: "/implementacoes/usingdatepicker",
+        icon: "icon-calendar",
       },
       {
-        name: 'Reactive Forms',
-        url: '/implementacoes/reactiveforms',
-        icon: 'icon-notebook'
+        name: "Reactive Forms",
+        url: "/implementacoes/reactiveforms",
+        icon: "icon-notebook",
       },
       {
-        name: 'Redux Products',
-        url: '/implementacoes/products',
-        icon: 'icon-notebook'
+        name: "Redux Products",
+        url: "/implementacoes/products",
+        icon: "icon-notebook",
       },
       {
-        name: 'Upload Files',
-        url: '/implementacoes/uploadfiles',
-        icon: 'icon-cloud-upload'
-      }
-    ]
-  }
+        name: "Upload Files",
+        url: "/implementacoes/uploadfiles",
+        icon: "icon-cloud-upload",
+      },
+    ],
+  },
 ];
