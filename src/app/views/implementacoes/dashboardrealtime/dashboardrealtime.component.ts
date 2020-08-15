@@ -5,6 +5,7 @@ import {
   HubConnectionBuilder,
   HttpTransportType,
 } from "@aspnet/signalr";
+import { environment } from "../../../../environments/environment";
 
 @Component({
   selector: "app-dashboardrealtime",
@@ -35,6 +36,10 @@ export class DashboardRealtimeComponent implements OnInit {
 
   private _hubConnection: HubConnection;
 
+  //`${environment.API}categories`
+  //https://localhost:5001/realtimebrokerhub
+  //`${environment.API}realtimebrokerhub`
+
   constructor() {
     this.createConnection();
     this.registerOnServerEvents();
@@ -51,7 +56,7 @@ export class DashboardRealtimeComponent implements OnInit {
   //https://stackoverflow.com/questions/52086158/angular-signalr-error-failed-to-complete-negotiation-with-the-server
   private createConnection() {
     this._hubConnection = new HubConnectionBuilder()
-      .withUrl("https://localhost:5001/realtimebrokerhub", {
+      .withUrl(`${environment.API}realtimebrokerhub`, {
         skipNegotiation: true,
         transport: HttpTransportType.WebSockets,
       })
@@ -66,8 +71,8 @@ export class DashboardRealtimeComponent implements OnInit {
           this.connectToStock(key);
         }
       })
-      .catch(() => {
-        console.log("Catch chamado!");
+      .catch((error) => {
+        console.log("Catch chamado!" + error);
         setTimeout(this.startConnection, 5000);
       });
   }
