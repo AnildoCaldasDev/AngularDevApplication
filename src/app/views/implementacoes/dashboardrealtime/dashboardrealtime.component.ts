@@ -10,7 +10,6 @@ import { environment } from "../../../../environments/environment";
 @Component({
   selector: "app-dashboardrealtime",
   templateUrl: "./dashboardrealtime.component.html",
-  styleUrls: ["./dashboardrealtime.component.css"],
 })
 export class DashboardRealtimeComponent implements OnInit {
   dictStocks = {

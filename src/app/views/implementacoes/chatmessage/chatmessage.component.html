@@ -1,0 +1,60 @@
+<div class="card">
+  <div class="card-body">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 animated fadeIn">
+      <div class="row pb-4 col-lg-12 col-md-12 text-center">
+        <h4 class="text-center m-lg-auto m-md-auto text-success">Chat de Usuários</h4>
+      </div>
+      <div class="row">
+        <div class="container">
+          <div class="messaging">
+            <div class="inbox_msg">
+              <div class="mesgs">
+                <div class="msg_history">
+                  <div *ngFor="let msg of messages">
+                    <div class="incoming_msg" *ngIf="msg.type == 'received'">
+                      <!-- <div class="incoming_msg_img"> </div> -->
+                      <div class="received_msg pb-2">
+                        <div class="received_msg_box">
+                          <!-- <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="user_img">
+                          <span class="online_icon"></span> -->
+                          <p>
+                            {{msg.messageDesc}}
+                          </p>
+                          <span class="time_date"> {{msg.date | date:'medium'}} </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="outgoing_msg" *ngIf="msg.type == 'sent'">
+                      <div class="sent_msg pb-2">
+                        <p>
+                          {{msg.messageDesc}}
+                        </p>
+                        <span class="time_date"> Você disse: {{msg.date | date:'medium'}}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row pb-4 pt-5 col-lg-12 col-md-12 text-center"> -->
+      <div class="type_msg">
+        <div class="input_msg_write">
+          <input type="text" class="write_msg" [value]="txtMessage" (input)="txtMessage=$event.target.value"
+            (keydown.enter)="sendMessage()" placeholder="Escreva sua mensagem..." />
+          <button class="msg_send_btn" type="button" (click)="sendMessage()"><i class="fa fa-paper-plane-o"
+              aria-hidden="true"></i></button>
+        </div>
+      </div>
+      <!-- <div class="input-group mb-3">
+          <input type="text" class="form-control" aria-label="Text input with dropdown button">
+          <div class="input-group-prepend">
+            <button class="btn btn-secondary" type="button" aria-expanded="false">Enviar</button>
+          </div>
+        </div> -->
+      <!-- </div> -->
+    </div>
+  </div>
+</div>

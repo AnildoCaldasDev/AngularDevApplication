@@ -40,6 +40,11 @@ export const navItems: INavData[] = [
         url: "/implementacoes/uploadfiles",
         icon: "icon-cloud-upload",
       },
+      {
+        name: "Chat Message",
+        url: "/implementacoes/chatmessage",
+        icon: "icon-bubbles",
+      },
     ],
   },
 ];

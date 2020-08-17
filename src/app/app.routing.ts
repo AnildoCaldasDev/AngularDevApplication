@@ -135,6 +135,14 @@ export const routes: Routes = [
             "./views/implementacoes/handlingfiles/handlefiles.module"
           ).then((m) => m.HandleFilesModule),
       },
+      {
+        path: "implementacoes",
+        //LEMBRAR QUE ESTE PATH É DO CAMINHO DO ARQUIVO:
+        loadChildren: () =>
+          import("./views/implementacoes/chatmessage/chatmessage.module").then(
+            (m) => m.ChatMessageModule
+          ),
+      },
     ],
   },
   { path: "**", component: P404Component },
