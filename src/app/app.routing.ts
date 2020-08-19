@@ -92,57 +92,50 @@ export const routes: Routes = [
       {
         path: "implementacoes",
         loadChildren: () =>
-          import(
-            "./views/implementacoes/dashboardrealtime/dashboardrealtime.module"
-          ).then((m) => m.DashboardRealtimeModule),
-      },
-      {
-        path: "implementacoes",
-        loadChildren: () =>
-          import("./views/implementacoes/datepickers/datepicker.module").then(
-            (m) => m.DatepickerModule
+          import("./views/implementacoes/implementation.module").then(
+            (m) => m.ImplementationModule
           ),
       },
-      {
-        path: "implementacoes",
-        //LEMBRAR QUE ESTE PATH É DO CAMINHO DO ARQUIVO:
-        loadChildren: () =>
-          import(
-            "./views/implementacoes/reactiveforms/reactiveforms.module"
-          ).then((m) => m.ReactiveFormsExampleModule),
-      },
-      {
-        path: "implementacoes",
-        //LEMBRAR QUE ESTE PATH É DO CAMINHO DO ARQUIVO:
-        loadChildren: () =>
-          import("./views/implementacoes/productlist/productlist.module").then(
-            (m) => m.ProductListModule
-          ),
-      },
-      {
-        path: "implementacoes",
-        //LEMBRAR QUE ESTE PATH É DO CAMINHO DO ARQUIVO:
-        loadChildren: () =>
-          import(
-            "./views/implementacoes/shoppingcart/shoppingcart.module"
-          ).then((m) => m.ShoppingCartModule),
-      },
-      {
-        path: "implementacoes",
-        //LEMBRAR QUE ESTE PATH É DO CAMINHO DO ARQUIVO:
-        loadChildren: () =>
-          import(
-            "./views/implementacoes/handlingfiles/handlefiles.module"
-          ).then((m) => m.HandleFilesModule),
-      },
-      {
-        path: "implementacoes",
-        //LEMBRAR QUE ESTE PATH É DO CAMINHO DO ARQUIVO:
-        loadChildren: () =>
-          import("./views/implementacoes/chatmessage/chatmessage.module").then(
-            (m) => m.ChatMessageModule
-          ),
-      },
+      // {
+      //   path: "implementacoes",
+      //   //LEMBRAR QUE ESTE PATH É DO CAMINHO DO ARQUIVO:
+      //   loadChildren: () =>
+      //     import(
+      //       "./views/implementacoes/reactiveforms/reactiveforms.module"
+      //     ).then((m) => m.ReactiveFormsExampleModule),
+      // },
+      // {
+      //   path: "implementacoes",
+      //   //LEMBRAR QUE ESTE PATH É DO CAMINHO DO ARQUIVO:
+      //   loadChildren: () =>
+      //     import("./views/implementacoes/productlist/productlist.module").then(
+      //       (m) => m.ProductListModule
+      //     ),
+      // },
+      // {
+      //   path: "implementacoes",
+      //   //LEMBRAR QUE ESTE PATH É DO CAMINHO DO ARQUIVO:
+      //   loadChildren: () =>
+      //     import(
+      //       "./views/implementacoes/shoppingcart/shoppingcart.module"
+      //     ).then((m) => m.ShoppingCartModule),
+      // },
+      // {
+      //   path: "implementacoes",
+      //   //LEMBRAR QUE ESTE PATH É DO CAMINHO DO ARQUIVO:
+      //   loadChildren: () =>
+      //     import(
+      //       "./views/implementacoes/handlingfiles/handlefiles.module"
+      //     ).then((m) => m.HandleFilesModule),
+      // },
+      // {
+      //   path: "implementacoes",
+      //   //LEMBRAR QUE ESTE PATH É DO CAMINHO DO ARQUIVO:
+      //   loadChildren: () =>
+      //     import("./views/implementacoes/chatmessage/chatmessage.module").then(
+      //       (m) => m.ChatMessageModule
+      //     ),
+      // },
     ],
   },
   { path: "**", component: P404Component },

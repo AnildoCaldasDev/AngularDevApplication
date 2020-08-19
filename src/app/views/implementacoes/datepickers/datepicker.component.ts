@@ -1,48 +1,89 @@
-import { Component, OnInit } from '@angular/core';
-import { INgxMyDpOptions as IInitNgxMyDpOptions } from 'ngx-mydatepicker';
-import { INgxMyDpOptions as IFinaltNgxMyDpOptions } from 'ngx-mydatepicker';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Component, OnInit } from "@angular/core";
+import { INgxMyDpOptions as IInitNgxMyDpOptions } from "ngx-mydatepicker";
+import { INgxMyDpOptions as IFinaltNgxMyDpOptions } from "ngx-mydatepicker";
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder,
+} from "@angular/forms";
 //font: froms reactive: https://jasonwatmore.com/post/2019/06/14/angular-8-reactive-forms-validation-example
 //font do date Picker: https://github.com/kekeh/ngx-mydatepicker
 @Component({
-  selector: 'app-datepicker',
-  templateUrl: './datepicker.component.html',
-  styleUrls: ['./datepicker.component.css']
+  selector: "app-datepicker",
+  templateUrl: "./datepicker.component.html",
 })
 export class DatepickerComponent implements OnInit {
-
   registerForm: FormGroup;
   submitted = false;
   initDatePickerOptions: IInitNgxMyDpOptions = {
     dateFormat: "dd/mm/yyyy",
-    dayLabels: { su: 'Dom', mo: 'Seg', tu: 'Ter', we: 'Qua', th: 'Qui', fr: 'Sex', sa: 'Sáb' },
-    monthLabels: {
-      1: 'Janeiro', 2: 'Fevereiro', 3: 'Março', 4: 'Abril', 5: 'Maio', 6: 'Junho',
-      7: 'Julho', 8: 'Agosto', 9: 'Setembro', 10: 'Outubro', 11: 'Novembro', 12: 'Dezembro'
+    dayLabels: {
+      su: "Dom",
+      mo: "Seg",
+      tu: "Ter",
+      we: "Qua",
+      th: "Qui",
+      fr: "Sex",
+      sa: "Sáb",
     },
-    todayBtnTxt: "Hoje"
+    monthLabels: {
+      1: "Janeiro",
+      2: "Fevereiro",
+      3: "Março",
+      4: "Abril",
+      5: "Maio",
+      6: "Junho",
+      7: "Julho",
+      8: "Agosto",
+      9: "Setembro",
+      10: "Outubro",
+      11: "Novembro",
+      12: "Dezembro",
+    },
+    todayBtnTxt: "Hoje",
   };
   initDate: DateFormat = new DateFormat();
   finalDate: DateFormat = new DateFormat();
 
   finalDatePickerOptions: IFinaltNgxMyDpOptions = {
     dateFormat: "dd/mm/yyyy",
-    dayLabels: { su: 'Dom', mo: 'Seg', tu: 'Ter', we: 'Qua', th: 'Qui', fr: 'Sex', sa: 'Sáb' },
-    monthLabels: {
-      1: 'Janeiro', 2: 'Fevereiro', 3: 'Março', 4: 'Abril', 5: 'Maio', 6: 'Junho',
-      7: 'Julho', 8: 'Agosto', 9: 'Setembro', 10: 'Outubro', 11: 'Novembro', 12: 'Dezembro'
+    dayLabels: {
+      su: "Dom",
+      mo: "Seg",
+      tu: "Ter",
+      we: "Qua",
+      th: "Qui",
+      fr: "Sex",
+      sa: "Sáb",
     },
-    todayBtnTxt: "Hoje"
-  }
+    monthLabels: {
+      1: "Janeiro",
+      2: "Fevereiro",
+      3: "Março",
+      4: "Abril",
+      5: "Maio",
+      6: "Junho",
+      7: "Julho",
+      8: "Agosto",
+      9: "Setembro",
+      10: "Outubro",
+      11: "Novembro",
+      12: "Dezembro",
+    },
+    todayBtnTxt: "Hoje",
+  };
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.createForm();
   }
 
   // convenience getter for easy access to form fields
-  get f() { return this.registerForm.controls; }
+  get f() {
+    return this.registerForm.controls;
+  }
 
   onSubmit() {
     this.submitted = true;
@@ -53,7 +94,9 @@ export class DatepickerComponent implements OnInit {
     }
 
     // display form values on success
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
+    alert(
+      "SUCCESS!! :-)\n\n" + JSON.stringify(this.registerForm.value, null, 4)
+    );
   }
 
   onReset() {
@@ -66,7 +109,7 @@ export class DatepickerComponent implements OnInit {
       Name: ["", Validators.required],
       Address: ["", Validators.required],
       InitDate: [null, Validators.required],
-      FinalDate: [null, Validators.required]
+      FinalDate: [null, Validators.required],
     });
   }
 
@@ -86,7 +129,6 @@ export class DatepickerComponent implements OnInit {
     // var incommingDate = event.formatted;
     //this.registerForm.patchValue({ FinalDate: event });
     this.compareRangeDate();
-
   }
 
   onInitDateChanged(event: any) {
@@ -97,25 +139,29 @@ export class DatepickerComponent implements OnInit {
     this.compareRangeDate();
   }
 
-
   compareRangeDate() {
-    var inittialDate = new Date(this.initDate.year, this.initDate.month - 1, this.initDate.day);
-    var finalDate = new Date(this.finalDate.year, this.finalDate.month - 1, this.finalDate.day);
+    var inittialDate = new Date(
+      this.initDate.year,
+      this.initDate.month - 1,
+      this.initDate.day
+    );
+    var finalDate = new Date(
+      this.finalDate.year,
+      this.finalDate.month - 1,
+      this.finalDate.day
+    );
 
     if (inittialDate.getFullYear() > 2010 && finalDate.getFullYear() > 2010) {
       if (inittialDate.getTime() > finalDate.getTime()) {
-        window.alert('Data Inicial maior que data Final');
+        window.alert("Data Inicial maior que data Final");
         this.clearInitDate();
         this.clearFinalDate();
       }
     } else {
-      console.log('Data em branco');
+      console.log("Data em branco");
     }
   }
-
-
 }
-
 
 // // custom validator to check that two fields match
 // export function MustMatch(controlName: string, matchingControlName: string) {
@@ -136,7 +182,6 @@ export class DatepickerComponent implements OnInit {
 //     }
 //   }
 // }
-
 
 export class DateFormat {
   year: number = 0;
