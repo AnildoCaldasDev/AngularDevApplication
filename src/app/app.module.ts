@@ -40,9 +40,10 @@ import { AppRoutingModule } from "./app.routing";
 import { BsDropdownModule } from "ngx-bootstrap/dropdown";
 import { TabsModule } from "ngx-bootstrap/tabs";
 import { ChartsModule } from "ng2-charts";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { StoreModule } from "@ngrx/store";
 import { cartReducer } from "./reducers/cart.reducer";
+import { InterceptorModule } from "./auth/interceptor/interceptor.module";
 
 @NgModule({
   imports: [
@@ -62,6 +63,7 @@ import { cartReducer } from "./reducers/cart.reducer";
     TabsModule.forRoot(),
     ChartsModule,
     HttpClientModule,
+    // InterceptorModule,
     StoreModule.forRoot({
       cart: cartReducer,
     }),

@@ -16,6 +16,8 @@ import { DynamicFormComponent } from "./reactiveforms/dynamicform/dynamic-form.c
 import { ShoppingCartComponent } from "./shoppingcart/shopping-cart.component";
 import { ImplementationRoutingModule } from "./implementation-routing.module";
 import { ReactiveSearchComponent } from "./reactivesearch/reactivesearch.component";
+import { PcpmanagerComponent } from "./pcpmanager/pcpmanager.component";
+import { PcpProductEditComponent } from "./pcpmanager/pcpproductedit.component";
 
 @NgModule({
   imports: [
@@ -38,6 +40,8 @@ import { ReactiveSearchComponent } from "./reactivesearch/reactivesearch.compone
     DynamicFormComponent,
     ShoppingCartComponent,
     ReactiveSearchComponent,
+    PcpmanagerComponent,
+    PcpProductEditComponent,
   ],
 })
 export class ImplementationModule {}

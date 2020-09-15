@@ -8,6 +8,8 @@ import { ProductListComponent } from "./productlist/product-list.component";
 import { ReactiveformsComponent } from "./reactiveforms/reactiveforms.component";
 import { ShoppingCartComponent } from "./shoppingcart/shopping-cart.component";
 import { ReactiveSearchComponent } from "./reactivesearch/reactivesearch.component";
+import { PcpmanagerComponent } from "./pcpmanager/pcpmanager.component";
+import { PcpProductEditComponent } from "./pcpmanager/pcpproductedit.component";
 
 const routes: Routes = [
   {
@@ -74,6 +76,20 @@ const routes: Routes = [
         component: ReactiveSearchComponent,
         data: {
           title: "Pesquisa Reativa",
+        },
+      },
+      {
+        path: "pcpmanager",
+        component: PcpmanagerComponent,
+        data: {
+          title: "PCP Produtos",
+        },
+      },
+      {
+        path: "pcpmanageredit",
+        component: PcpProductEditComponent,
+        data: {
+          title: "PCP Produtos - Novo",
         },
       },
     ],

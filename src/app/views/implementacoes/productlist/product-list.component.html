@@ -1,41 +1,39 @@
 <div *ngIf="loadFailed" class="text-center">
-    <div class="d-flex justify-content-center">
-        <div class="alert alert-danger" role="alert">
-            <h5>Houve uma falha ao consultar a lista de produtos! Tente novamente mais tarde.</h5>
-            <br>
-            <span>Detalhe do Erro: {{errorMessage}}</span>
-        </div>
+  <div class="d-flex justify-content-center">
+    <div class="alert alert-danger" role="alert">
+      <h5>Houve uma falha ao consultar a lista de produtos! Tente novamente mais tarde.</h5>
+      <br>
+      <span>Detalhe do Erro: {{errorMessage}}</span>
     </div>
-    <br>
+  </div>
+  <br>
 </div>
 
 
 
 
 <div *ngIf="!products && !loadFailed" class="text-center">
-    <div class="d-flex justify-content-center">
-        <div class="spinner-border" style="width: 6rem; height: 6rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
+  <div class="d-flex justify-content-center">
+    <div class="spinner-border" style="width: 6rem; height: 6rem;" role="status">
+      <span class="sr-only">Loading...</span>
     </div>
-    <br>
-    <label>Carregando...</label>
+  </div>
+  <br>
+  <label>Carregando...</label>
 </div>
 
 <div *ngIf="products">
-    <div class="row text-center">
-        <div class="card col-sm-12 col-xs-12 col-md-3 col-lg-3 ml-4" *ngFor="let product of products">
-            <div class="text-center mt-2">
-                <img src="{{product.image}}" width="150" height="150" class="rounded" alt="product.title">
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">{{product.title}}</h5>
-                <p class="card-text">{{product.price | currency: 'BRL' }}</p>
-                <!-- <a href="#" class="btn btn-primary">Adicionar</a> -->
-                <button class="btn btn-primary" (click)="add(product)">Adicionar</button>
-            </div>
-        </div>
+  <div class="row text-center">
+    <div class="card col-sm-12 col-xs-12 col-md-3 col-lg-3 ml-4" *ngFor="let product of products">
+      <div class="text-center mt-2">
+        <img src="{{product.image}}" width="150" height="150" class="rounded" alt="product.title">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{product.title}}</h5>
+        <p class="card-text">{{product.price | currency: 'BRL' }}</p>
+        <!-- <a href="#" class="btn btn-primary">Adicionar</a> -->
+        <button class="btn btn-primary" (click)="add(product)">Adicionar</button>
+      </div>
     </div>
-
-
+  </div>
 </div>
