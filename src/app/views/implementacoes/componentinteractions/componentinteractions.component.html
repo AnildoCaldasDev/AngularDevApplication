@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="card-header">
+    Component Interactions - Examples
+  </div>
+  <div class="card-body">
+    <p><strong>{{master}} controls {{heroes.length}} heroes</strong></p>
+    <app-hero-child *ngFor="let hero of heroes" [hero]="hero" [master]="master" [nickName]="hero.nickName">
+    </app-hero-child>
+  </div>
+</div>

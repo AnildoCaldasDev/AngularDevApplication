@@ -20,6 +20,8 @@ import { PcpmanagerComponent } from "./pcpmanager/pcpmanager.component";
 import { PcpProductEditComponent } from "./pcpmanager/pcpproductedit.component";
 import { InputandoutputComponent } from "./inputandoutput/inputandoutput.component";
 import { ComponentchildexampleComponent } from "../../components/componentchildexample.component";
+import { ComponentinteractionsComponent } from "./componentinteractions/componentinteractions.component";
+import { HeroChildComponent } from "../../components/hero-child.component";
 
 @NgModule({
   imports: [
@@ -46,6 +48,8 @@ import { ComponentchildexampleComponent } from "../../components/componentchilde
     PcpProductEditComponent,
     InputandoutputComponent,
     ComponentchildexampleComponent,
+    ComponentinteractionsComponent,
+    HeroChildComponent,
   ],
 })
 export class ImplementationModule {}

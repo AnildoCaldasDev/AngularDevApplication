@@ -54,7 +54,12 @@ export const navItems: INavData[] = [
   {
     name: "Input x Output",
     url: "/implementacoes/inputandoutput",
-    icon: "icon-magnifier",
+    icon: "icon-share-alt",
+  },
+  {
+    name: "Comp Interactions",
+    url: "/implementacoes/componentinteractions",
+    icon: "icon-paper-plane",
   },
   //menus dispostos com pai e filhos na arore:
   // {

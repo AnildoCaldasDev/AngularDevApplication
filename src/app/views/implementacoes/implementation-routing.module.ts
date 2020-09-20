@@ -11,6 +11,7 @@ import { ReactiveSearchComponent } from "./reactivesearch/reactivesearch.compone
 import { PcpmanagerComponent } from "./pcpmanager/pcpmanager.component";
 import { PcpProductEditComponent } from "./pcpmanager/pcpproductedit.component";
 import { InputandoutputComponent } from "./inputandoutput/inputandoutput.component";
+import { ComponentinteractionsComponent } from "./componentinteractions/componentinteractions.component";
 
 const routes: Routes = [
   {
@@ -98,6 +99,13 @@ const routes: Routes = [
         component: InputandoutputComponent,
         data: {
           title: "Input and Output",
+        },
+      },
+      {
+        path: "componentinteractions",
+        component: ComponentinteractionsComponent,
+        data: {
+          title: "Component Interactions",
         },
       },
     ],
