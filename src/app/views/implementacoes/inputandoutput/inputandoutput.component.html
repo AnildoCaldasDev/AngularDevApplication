@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header">
+    Input and Output Exemplos
+  </div>
+  <div class="card-body">
+    <p>Exemplo de Input:</p>
+    <app-componentchildexample (deleteItemEvent)="deleteItem($event)" (newItemEvent)="addItem($event)"
+      [item]="inputMessage"></app-componentchildexample>
+    <br>
+    <br>
+    <p>Exemplo do Output Saindo no componente Pai:</p>
+    <ul>
+      <li *ngFor="let item of items">{{item}}</li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<p>Texto vindo do pai: {{item}}</p>
+<br>
+<label>Digite o valor para o componente pai receber: <input type="text" class="form-control" #newItem></label>
+<button (click)="addNewItem(newItem.value)" class="btn btn-success">Adicionar</button>
+<button (click)="deleteItem(newItem.value)" class="btn btn-danger">Excluir</button>

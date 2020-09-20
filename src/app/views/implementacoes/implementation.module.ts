@@ -18,6 +18,8 @@ import { ImplementationRoutingModule } from "./implementation-routing.module";
 import { ReactiveSearchComponent } from "./reactivesearch/reactivesearch.component";
 import { PcpmanagerComponent } from "./pcpmanager/pcpmanager.component";
 import { PcpProductEditComponent } from "./pcpmanager/pcpproductedit.component";
+import { InputandoutputComponent } from "./inputandoutput/inputandoutput.component";
+import { ComponentchildexampleComponent } from "../../components/componentchildexample.component";
 
 @NgModule({
   imports: [
@@ -42,6 +44,8 @@ import { PcpProductEditComponent } from "./pcpmanager/pcpproductedit.component";
     ReactiveSearchComponent,
     PcpmanagerComponent,
     PcpProductEditComponent,
+    InputandoutputComponent,
+    ComponentchildexampleComponent,
   ],
 })
 export class ImplementationModule {}

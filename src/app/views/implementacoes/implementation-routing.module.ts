@@ -10,6 +10,7 @@ import { ShoppingCartComponent } from "./shoppingcart/shopping-cart.component";
 import { ReactiveSearchComponent } from "./reactivesearch/reactivesearch.component";
 import { PcpmanagerComponent } from "./pcpmanager/pcpmanager.component";
 import { PcpProductEditComponent } from "./pcpmanager/pcpproductedit.component";
+import { InputandoutputComponent } from "./inputandoutput/inputandoutput.component";
 
 const routes: Routes = [
   {
@@ -90,6 +91,13 @@ const routes: Routes = [
         component: PcpProductEditComponent,
         data: {
           title: "PCP Produtos - Novo",
+        },
+      },
+      {
+        path: "inputandoutput",
+        component: InputandoutputComponent,
+        data: {
+          title: "Input and Output",
         },
       },
     ],

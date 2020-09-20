@@ -51,6 +51,11 @@ export const navItems: INavData[] = [
     url: "/implementacoes/pcpmanager",
     icon: "icon-magnifier",
   },
+  {
+    name: "Input x Output",
+    url: "/implementacoes/inputandoutput",
+    icon: "icon-magnifier",
+  },
   //menus dispostos com pai e filhos na arore:
   // {
   //   name: "Implementações",

@@ -12,6 +12,7 @@ import {
 } from "rxjs/operators";
 import { Router } from "@angular/router";
 import { ResponseModel } from "../../../models/response.model";
+import { from } from "rxjs";
 
 @Component({
   selector: "app-pcpmanager",
@@ -63,4 +64,33 @@ export class PcpmanagerComponent implements OnInit {
       );
     }
   }
+
+  testarRegex() {
+    // let url_ =
+    //   "http://testeregex" +
+    //   "/api/services/app/User/GetRoles?&Teste=1222%eu?&Teste2=%22222";
+    // url_ = url_.replace("?&", "-");
+    // console.log(url_);
+    //EXEMPLO OPERADOR PIPE E MAP:
+    // const source = from([1, 2, 3, 4, 5]);
+    // const example = source.pipe(map((val) => val + 10));
+    // const subs = example.subscribe((val) => console.log(val));
+    // EXEMPLO OPERADOR PIPE, TAP E MAP:
+    // const source = from([
+    //   "ana",
+    //   "juliana",
+    //   "gabriel",
+    //   "anildo",
+    //   "isaac",
+    //   "eliete",
+    // ]);
+    // const example = source.pipe(
+    //   map((val) => "Seja bem vindo " + this.capitalizeName(val))
+    // );
+    // const subs = example.subscribe((val) => console.log(val));
+  }
+
+  // capitalizeName(name: string): string {
+  //   return name.charAt(0).toUpperCase() + name.slice(1);
+  // }
 }
