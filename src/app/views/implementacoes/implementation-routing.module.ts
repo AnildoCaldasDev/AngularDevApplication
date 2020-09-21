@@ -12,6 +12,7 @@ import { PcpmanagerComponent } from "./pcpmanager/pcpmanager.component";
 import { PcpProductEditComponent } from "./pcpmanager/pcpproductedit.component";
 import { InputandoutputComponent } from "./inputandoutput/inputandoutput.component";
 import { ComponentinteractionsComponent } from "./componentinteractions/componentinteractions.component";
+import { AuthGuard } from "../../guards/auth.guard";
 
 const routes: Routes = [
   {
@@ -23,10 +24,12 @@ const routes: Routes = [
       {
         path: "",
         redirectTo: "dashboardrealtime",
+        canActivate: [AuthGuard],
       },
       {
         path: "dashboardrealtime",
         component: DashboardRealtimeComponent,
+        canActivate: [AuthGuard],
         data: {
           title: "Dashboard Realtime",
         },
@@ -34,6 +37,7 @@ const routes: Routes = [
       {
         path: "chatmessage",
         component: ChatMessageComponent,
+        canActivate: [AuthGuard],
         data: {
           title: "Chat do Usuário",
         },
@@ -41,6 +45,7 @@ const routes: Routes = [
       {
         path: "datepickers",
         component: DatepickerComponent,
+        canActivate: [AuthGuard],
         data: {
           title: "Usando Date Picker",
         },
@@ -48,6 +53,9 @@ const routes: Routes = [
       {
         path: "uploadfiles",
         component: HandleFilesComponent,
+        canActivate: [AuthGuard],
+        //https://angular.io/api/router/CanActivate
+        //https://medium.com/@ryanchenkie_40935/angular-authentication-using-route-guards-bf7a4ca13ae3
         data: {
           title: "Tela de Upload de Files",
         },
@@ -55,6 +63,7 @@ const routes: Routes = [
       {
         path: "products",
         component: ProductListComponent,
+        canActivate: [AuthGuard],
         data: {
           title: "Produtos",
         },
@@ -62,6 +71,7 @@ const routes: Routes = [
       {
         path: "reactiveforms",
         component: ReactiveformsComponent,
+        canActivate: [AuthGuard],
         data: {
           title: "Impressão de QR Code",
         },
@@ -69,6 +79,7 @@ const routes: Routes = [
       {
         path: "shoppingcart",
         component: ShoppingCartComponent,
+        canActivate: [AuthGuard],
         data: {
           title: "Carrinho de Compras - Checkout",
         },
@@ -76,6 +87,7 @@ const routes: Routes = [
       {
         path: "reactivesearch",
         component: ReactiveSearchComponent,
+        canActivate: [AuthGuard],
         data: {
           title: "Pesquisa Reativa",
         },
@@ -83,6 +95,7 @@ const routes: Routes = [
       {
         path: "pcpmanager",
         component: PcpmanagerComponent,
+        canActivate: [AuthGuard],
         data: {
           title: "PCP Produtos",
         },
@@ -90,6 +103,7 @@ const routes: Routes = [
       {
         path: "pcpmanageredit",
         component: PcpProductEditComponent,
+        canActivate: [AuthGuard],
         data: {
           title: "PCP Produtos - Novo",
         },
@@ -97,6 +111,7 @@ const routes: Routes = [
       {
         path: "inputandoutput",
         component: InputandoutputComponent,
+        canActivate: [AuthGuard],
         data: {
           title: "Input and Output",
         },
@@ -104,6 +119,7 @@ const routes: Routes = [
       {
         path: "componentinteractions",
         component: ComponentinteractionsComponent,
+        canActivate: [AuthGuard],
         data: {
           title: "Component Interactions",
         },

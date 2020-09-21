@@ -2,6 +2,8 @@
   [navbarBrandFull]="{src: 'assets/img/brand/logo.svg', width: 89, height: 25, alt: 'CoreUI Logo'}"
   [navbarBrandMinimized]="{src: 'assets/img/brand/sygnet.svg', width: 30, height: 30, alt: 'CoreUI Logo'}"
   [sidebarToggler]="'lg'" [asideMenuToggler]="'lg'">
+  <input type="file" #fileUpload (click)="fileUpload.value = null" accept=".png, .jpg, .jpeg"
+    (change)="chooseUserAvatar($event)" style="display: none">
   <ul class="nav navbar-nav d-md-down-none">
     <li class="nav-item px-3">
       <a class="nav-link" href="#">Dashboard</a>
@@ -34,7 +36,7 @@
     <li class="nav-item dropdown" dropdown placement="bottom right">
       <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"
         dropdownToggle (click)="false">
-        <img src="assets/img/avatars/6.jpg" class="img-avatar" alt="admin@bootstrapmaster.com" />
+        <img [src]="avataruser" class="img-avatar" alt="admin@bootstrapmaster.com" />
       </a>
       <div class="dropdown-menu dropdown-menu-right" *dropdownMenu aria-labelledby="simple-dropdown">
         <div class="dropdown-header text-center"><strong>Account</strong></div>
@@ -47,6 +49,9 @@
         <a class="dropdown-item" href="#"><i class="fa fa-comments"></i> Comment<span
             class="badge badge-warning">42</span></a>
         <div class="dropdown-header text-center"><strong>Settings</strong></div>
+        <a class="dropdown-item" href="javascript:void(0)" (click)="fileUpload.click()">
+          <i class="fa fa-image"></i>
+          Change Avatar</a>
         <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a>
         <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> Setting</a>
         <a class="dropdown-item" href="#"><i class="fa fa-usd"></i> Payments<span class="badge badge-dark">42</span></a>
@@ -54,7 +59,7 @@
             class="badge badge-primary">42</span></a>
         <div class="divider"></div>
         <a class="dropdown-item" href="#"><i class="fa fa-shield"></i> Lock account</a>
-        <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
+        <a class="dropdown-item" href="javascript:void(0)" (click)="logout()"><i class="fa fa-lock"></i> Logout</a>
       </div>
     </li>
   </ul>

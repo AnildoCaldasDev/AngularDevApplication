@@ -22,6 +22,8 @@ import { InputandoutputComponent } from "./inputandoutput/inputandoutput.compone
 import { ComponentchildexampleComponent } from "../../components/componentchildexample.component";
 import { ComponentinteractionsComponent } from "./componentinteractions/componentinteractions.component";
 import { HeroChildComponent } from "../../components/hero-child.component";
+import { AuthGuard } from "../../guards/auth.guard";
+import { RouteReuseStrategy } from "@angular/router";
 
 @NgModule({
   imports: [
@@ -51,5 +53,6 @@ import { HeroChildComponent } from "../../components/hero-child.component";
     ComponentinteractionsComponent,
     HeroChildComponent,
   ],
+  providers: [AuthGuard],
 })
 export class ImplementationModule {}

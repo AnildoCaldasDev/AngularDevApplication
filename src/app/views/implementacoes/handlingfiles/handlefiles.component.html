@@ -15,15 +15,36 @@
     <br>
     <br>
     <br>
-    <div>
+    <!-- <div>
       <h5>Download File Area:</h5>
     </div>
-    <br>
-    <div class="row">
+    <br> -->
+    <!-- <div class="row">
       <app-download-file [url]="'downloadExcel'" [buttonName]="'Download Excel'" [fileName]="'report.xlsx'">AAA
       </app-download-file>
       <app-download-file [url]="'downloadPdf'" [buttonName]="'Download Pdf'" [fileName]="'report.pdf'">
       </app-download-file>
+    </div> -->
+
+    <div>
+      <h5>Upload Image base64 to Sql Server:</h5>
     </div>
+    <br>
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 pull-left">
+        <div class="custom-file">
+          <input type="file" id="FUImage" class="custom-file-input" name="FUImage" accept=".png, .jpg, .jpeg"
+            (change)="handleFileInput($event.target.files)">
+          <label id="customFileLabel" class="custom-file-label" for="customFile">Escolha o Arquivo</label>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 pull-left">
+        <button class="btn btn-primary" [disabled]="!ImageBaseData" (click)="btnUpload()">Confirmar</button>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 pull-left">
+        <img *ngIf="ImageBaseData" src="{{ImageBaseData}}" width="80" height="80" alt="Selected Image"
+          class="img-thumbnail">
+      </div>
+    </div>
+    <br>
   </div>
-</div>
