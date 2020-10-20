@@ -24,6 +24,7 @@ import { ComponentinteractionsComponent } from "./componentinteractions/componen
 import { HeroChildComponent } from "../../components/hero-child.component";
 import { AuthGuard } from "../../guards/auth.guard";
 import { RouteReuseStrategy } from "@angular/router";
+import { BibliotecarxjsexemplosComponent } from "./bibliotecarxjsexemplos/bibliotecarxjsexemplos.component";
 
 @NgModule({
   imports: [
@@ -52,6 +53,7 @@ import { RouteReuseStrategy } from "@angular/router";
     ComponentchildexampleComponent,
     ComponentinteractionsComponent,
     HeroChildComponent,
+    BibliotecarxjsexemplosComponent,
   ],
   providers: [AuthGuard],
 })

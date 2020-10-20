@@ -61,6 +61,11 @@ export const navItems: INavData[] = [
     url: "/implementacoes/componentinteractions",
     icon: "icon-paper-plane",
   },
+  {
+    name: "RxJS Exemplos",
+    url: "/implementacoes/bibliotecarxjsexemplos",
+    icon: "icon-paper-plane",
+  },
   //menus dispostos com pai e filhos na arore:
   // {
   //   name: "Implementações",

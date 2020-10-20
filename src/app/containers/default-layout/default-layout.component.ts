@@ -1,33 +1,50 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { navItems } from "../../_nav";
 import { CartModel } from "../../models/cart.model";
-import { Observable } from "rxjs";
+import { Observable, Subscription } from "rxjs";
 import { Store, select } from "@ngrx/store";
 import { Router } from "@angular/router";
 import { Route } from "@angular/compiler/src/core";
 import { FileUploadModel } from "../../models/fileupload.model";
 import { UserService } from "../../services/user.service";
 import { UserAlthenticatedUtil } from "../../utils/userauthenticated.utils";
+import { BibliotecarxjsService } from '../../services/bibliotecarxjs.service';
 
 @Component({
   selector: "app-dashboard",
   templateUrl: "./default-layout.component.html",
 })
-export class DefaultLayoutComponent implements OnInit {
+export class DefaultLayoutComponent implements OnInit, OnDestroy {
   cart$: Observable<CartModel>;
   avataruser: string = "https://avatars3.githubusercontent.com/u/583231?v=4";
+  showShoppingCart: boolean = false;
+  subscription: Subscription;
 
   constructor(
     private store: Store<{ cart: CartModel }>,
     private route: Router,
-    private userService: UserService
+    private userService: UserService,
+    private _bblRjxs: BibliotecarxjsService
   ) {
     this.cart$ = store.pipe(select("cart"));
     this.avataruser = UserAlthenticatedUtil.getAvatarUser();
     //console.log(this.avataruser);
+    this.subscription = this._bblRjxs.consultaModeloPlano().subscribe(result => {
+        if (result.idModeloPlano == 1){
+          this.showShoppingCart = true;
+        }else{
+          this.showShoppingCart = false;
+        }
+    }, error => {
+        window.alert(error);
+    });
   }
 
   ngOnInit(): void {}
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
+  }
 
   public sidebarMinimized = false;
   public navItems = navItems;

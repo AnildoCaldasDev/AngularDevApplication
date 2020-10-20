@@ -13,6 +13,7 @@ import { PcpProductEditComponent } from "./pcpmanager/pcpproductedit.component";
 import { InputandoutputComponent } from "./inputandoutput/inputandoutput.component";
 import { ComponentinteractionsComponent } from "./componentinteractions/componentinteractions.component";
 import { AuthGuard } from "../../guards/auth.guard";
+import { BibliotecarxjsexemplosComponent } from "./bibliotecarxjsexemplos/bibliotecarxjsexemplos.component";
 
 const routes: Routes = [
   {
@@ -122,6 +123,14 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         data: {
           title: "Component Interactions",
+        },
+      },
+      {
+        path: "bibliotecarxjsexemplos",
+        component: BibliotecarxjsexemplosComponent,
+        canActivate: [AuthGuard],
+        data: {
+          title: "TudoSobre RxJS",
         },
       },
     ],
