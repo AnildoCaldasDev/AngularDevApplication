@@ -1,0 +1,23 @@
+.cardDiv{
+  width: 100px;
+  height: 100px;
+  background-color: #666;
+  border: solid 1px #333;
+  cursor: move;
+  position: absolute;
+  box-shadow: #333 1px 1px 25px;
+}
+
+
+ul{
+  list-style: none;
+}
+
+li {
+  padding: 16px;
+  cursor: pointer;
+}
+
+li:not(:last-of-type){
+  border-bottom: solid 2px orange;
+}

@@ -30,19 +30,19 @@ export class DefaultLayoutComponent implements OnInit, OnDestroy {
     this.avataruser = UserAlthenticatedUtil.getAvatarUser();
     //console.log(this.avataruser);
     this.subscription = this._bblRjxs.consultaModeloPlano().subscribe(result => {
-        if (result.idModeloPlano == 1){
-          this.showShoppingCart = true;
-        }else{
-          this.showShoppingCart = false;
-        }
+      if (result.idModeloPlano > 1) {
+        this.showShoppingCart = true;
+      } else {
+        this.showShoppingCart = false;
+      }
     }, error => {
-        window.alert(error);
+      window.alert(error);
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this.subscription.unsubscribe();
   }
 
