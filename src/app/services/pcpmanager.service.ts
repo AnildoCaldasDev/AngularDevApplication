@@ -1,14 +1,14 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "../../environments/environment";
-import { PcpProductModel } from "../models/pcpproduct.model";
+import { IProductModel, PcpProductModel } from "../models/pcpproduct.model";
 import { ResponseModel } from "../models/response.model";
 
 @Injectable({
   providedIn: "root",
 })
 export class PcpManagerService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getAll() {
     return this.http.get<PcpProductModel[]>(`${environment.API}products`);
@@ -33,4 +33,9 @@ export class PcpManagerService {
       product
     );
   }
+
+  getAllCustom() {
+    return this.http.get<IProductModel[]>(`${environment.API}products`);
+  }
+
 }

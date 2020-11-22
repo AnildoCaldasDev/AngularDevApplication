@@ -66,6 +66,11 @@ export const navItems: INavData[] = [
     url: "/implementacoes/bibliotecarxjsexemplos",
     icon: "icon-paper-plane",
   },
+  {
+    name: "Observables Conceitos",
+    url: "/implementacoes/observablesconcepts",
+    icon: "icon-paper-plane",
+  },
   //menus dispostos com pai e filhos na arore:
   // {
   //   name: "Implementações",

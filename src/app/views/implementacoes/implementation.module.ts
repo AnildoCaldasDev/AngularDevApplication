@@ -25,6 +25,9 @@ import { HeroChildComponent } from "../../components/hero-child.component";
 import { AuthGuard } from "../../guards/auth.guard";
 import { RouteReuseStrategy } from "@angular/router";
 import { BibliotecarxjsexemplosComponent } from "./bibliotecarxjsexemplos/bibliotecarxjsexemplos.component";
+import { ProductdetailComponent } from './observablesconcepts/productdetail.component';
+import { ProductlistComponent } from './observablesconcepts/productlist.component';
+import { ObservableindexComponent } from './observablesconcepts/observableindex.component';
 
 @NgModule({
   imports: [
@@ -54,7 +57,10 @@ import { BibliotecarxjsexemplosComponent } from "./bibliotecarxjsexemplos/biblio
     ComponentinteractionsComponent,
     HeroChildComponent,
     BibliotecarxjsexemplosComponent,
+    ProductdetailComponent,
+    ProductlistComponent,
+    ObservableindexComponent,
   ],
   providers: [AuthGuard],
 })
-export class ImplementationModule {}
+export class ImplementationModule { }

@@ -1,5 +1,102 @@
-<p>Texto vindo do pai: {{item}}</p>
+<!-- <p>Texto vindo do pai: {{item}}</p>
 <br>
 <label>Digite o valor para o componente pai receber: <input type="text" class="form-control" #newItem></label>
 <button (click)="addNewItem(newItem.value)" class="btn btn-success">Adicionar</button>
-<button (click)="deleteItem(newItem.value)" class="btn btn-danger">Excluir</button>
+<button (click)="deleteItem(newItem.value)" class="btn btn-danger">Excluir</button> -->
+
+<p><b>Componente Filho - Manutenção Videos Youtube - @Input/@Output</b></p>
+
+<form class="form-horizontal">
+  <input type="hidden" />
+
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label font-weight-bold" for="input-small"
+      >Código</label
+    >
+    <div class="col-sm-8">
+      <input
+        #id
+        type="text"
+        readonly
+        autocomplete="off"
+        name="input-small"
+        class="form-control form-control-sm"
+      />
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label font-weight-bold" for="input-small"
+      >Titulo</label
+    >
+    <div class="col-sm-8">
+      <input
+        #titulo
+        type="text"
+        autocomplete="off"
+        name="input-small"
+        class="form-control form-control-sm"
+        placeholder="Titulo"
+      />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label font-weight-bold" for="description"
+      >Autor</label
+    >
+    <div class="col-sm-8">
+      <input
+        #autor
+        autocomplete="off"
+        type="text"
+        name="input-small"
+        class="form-control form-control-sm"
+        placeholder="Autor"
+      />
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-4 col-form-label font-weight-bold" for="price"
+      >Canal</label
+    >
+    <div class="col-sm-8">
+      <input
+        #canal
+        autocomplete="off"
+        type="text"
+        name="input-small"
+        class="form-control form-control-sm"
+        placeholder="Canal"
+      />
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-8">
+      <button
+        *ngIf="videoEdicao"
+        (click)="enviarLike()"
+        class="btn btn-primary btn-sm pull-right"
+      >
+        Like
+      </button>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12t">
+      <button
+        *ngIf="videoEdicao"
+        (click)="excluirVideo(videoEdicao)"
+        class="btn btn-danger btn-sm pull-left"
+      >
+        Excluir
+      </button>
+
+      <button (click)="salvarVideo()" class="btn btn-success btn-sm pull-right">
+        Salvar
+      </button>
+    </div>
+  </div>
+</form>

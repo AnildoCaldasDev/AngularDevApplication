@@ -14,6 +14,7 @@ import { InputandoutputComponent } from "./inputandoutput/inputandoutput.compone
 import { ComponentinteractionsComponent } from "./componentinteractions/componentinteractions.component";
 import { AuthGuard } from "../../guards/auth.guard";
 import { BibliotecarxjsexemplosComponent } from "./bibliotecarxjsexemplos/bibliotecarxjsexemplos.component";
+import { ObservableindexComponent } from './observablesconcepts/observableindex.component';
 
 const routes: Routes = [
   {
@@ -133,6 +134,14 @@ const routes: Routes = [
           title: "TudoSobre RxJS",
         },
       },
+      {
+        path: "observablesconcepts",
+        component: ObservableindexComponent,
+        canActivate: [AuthGuard],
+        data: {
+          title: "TudoSobre Observables",
+        },
+      },
     ],
   },
 ];
@@ -141,4 +150,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ImplementationRoutingModule {}
+export class ImplementationRoutingModule { }

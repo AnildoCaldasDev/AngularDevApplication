@@ -8,3 +8,13 @@ export class PcpProductModel {
   public categoryId: number;
   public category: Category;
 }
+
+
+export interface IProductModel {
+  id: number;
+  title: string;
+  description: string;
+  price: number;
+  categoryId: number;
+  category: Category;
+}

@@ -1,22 +1,67 @@
 <div class="card">
-  <div class="card-header">
-    Input and Output Exemplos
-  </div>
+  <div class="card-header">Input and Output Exemplos</div>
   <div class="card-body">
-    <p>Exemplo de Input:</p>
-    <app-componentchildexample (deleteItemEvent)="deleteItem($event)" (newItemEvent)="addItem($event)"
-      [item]="inputMessage"></app-componentchildexample>
-    <br>
-    <br>
+    <!-- <p>Exemplo de Input:</p> -->
+    <!-- <app-componentchildexample (deleteItemEvent)="deleteItem($event)" (newItemEvent)="addItem($event)"
+      [item]="inputMessage"></app-componentchildexample> -->
+    <!-- <br />
+    <br />
     <p>Exemplo do Output Saindo no componente Pai:</p>
     <ul>
-      <li *ngFor="let item of items">{{item}}</li>
+      <li *ngFor="let item of items">{{ item }}</li>
     </ul>
-    <br>
-    <br>
-    <br>
-    <input #idModelo id="idModeloPlano" type="number" >
-    <button (click)="atualizarValor()" class="btn btn-primary">Atualizar</button>
+    <br />
+    <br />
+    <br />
+    <input #idModelo id="idModeloPlano" type="number" />
+    <button (click)="atualizarValor()" class="btn btn-primary">
+      Atualizar
+    </button> -->
 
+    <app-componentchildexample
+      (inclusaoVideoOutEvent)="inclusaoVideo($event)"
+      (exclusaoVideoOutEvent)="exclusaoVideo($event)"
+      (incrementarLikeOutEvent)="incrementarLike($event)"
+    ></app-componentchildexample>
+    <hr />
+    <p>
+      <b>Componente Pai - Listagem de Videos Youtube</b>
+    </p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Titulo</th>
+          <th scope="col">Autor</th>
+          <th scope="col">Canal</th>
+          <th scope="col">NumeroLikes</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let video of listaVideosYoutube">
+          <th scope="row">{{ video.id }}</th>
+          <td>{{ video.titulo }}</td>
+          <td>{{ video.autor }}</td>
+          <td>{{ video.canal }}</td>
+          <td>{{ video.likes }}</td>
+          <td class="pull-right">
+            <button
+              (click)="acaoBtnEditarVideo(video)"
+              class="btn btn-primary btn-sm"
+            >
+              Editar
+            </button>
+            |
+            <button
+              (click)="acaoBtnExcluirVideo(video)"
+              class="btn btn-danger btn-sm"
+            >
+              Excluir
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
